@@ -19,7 +19,7 @@ export default function TablePagination({
 	rowsPerPage,
 	setRowsPerPage,
 }: TablePaginationProps) {
-	const { primaryColor, darkenedPrimary, secondaryColor } = useTypedSelector(
+	const { darkenedPrimary, secondaryColor } = useTypedSelector(
 		(state) => state.theme
 	);
 
@@ -28,15 +28,16 @@ export default function TablePagination({
 			const page = Math.floor(dataLength / rowsPerPage);
 			setPage(page < 0 ? 0 : page);
 		}
-	}, [page, rowsPerPage, dataLength]);
+	}, [page, rowsPerPage, dataLength, setPage]);
 
 	const ResultRangeDisplay = useMemo(() => {
 		const lowestResult = page * rowsPerPage + 1;
 		const highestResult = page * rowsPerPage + rowsPerPage;
 		return (
 			<p>
-				{lowestResult}-{highestResult > dataLength ? dataLength : highestResult}{' '}
-				of {dataLength}
+				{dataLength === 0 ? 0 : lowestResult}-
+				{highestResult > dataLength ? dataLength : highestResult} of{' '}
+				{dataLength}
 			</p>
 		);
 	}, [dataLength, page, rowsPerPage]);
