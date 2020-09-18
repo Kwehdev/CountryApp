@@ -1,13 +1,15 @@
 import { combineReducers } from 'redux';
 
 import countryReducer from './country';
-import searchReducer from './search';
+import filterReducer from './filter';
+import sortReducer from './sort';
 import themeReducer from './theme';
 
 const rootReducer = combineReducers({
 	countries: countryReducer,
 	theme: themeReducer,
-	search: searchReducer
+	filterQuery: filterReducer,
+	sortOptions: sortReducer,
 });
 
 export default rootReducer;

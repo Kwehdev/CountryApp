@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import useTypedSelector from '../../hooks/useTypedSelector';
-import { setSearchQuery } from '../../redux/actions/search';
+import { setFilterQuery } from '../../redux/actions/filter';
 
 import styles from './SearchBar.module.css';
 
@@ -16,7 +16,7 @@ export default function SearchBar() {
 		if (!query) {
 			query = '';
 		}
-		dispatch(setSearchQuery(query));
+		dispatch(setFilterQuery(query));
 	};
 
 	return (

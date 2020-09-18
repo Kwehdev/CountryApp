@@ -20,7 +20,6 @@ const mapTypeToStyle: MapTypeToStyle = {
 
 export default function TableCell({ children, type }: TableCellProps) {
 	const StyleType = mapTypeToStyle[type];
-	console.log(StyleType);
 	return (
 		<td className={StyleType}>
 			<div className={styles.Wrapper}>{children}</div>
