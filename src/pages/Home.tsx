@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
+import CountryApp from '../components/CountryApp';
 import useTypedSelector from '../hooks/useTypedSelector';
 
 import { getAllCountries } from '../redux/actions/country';
@@ -24,7 +25,7 @@ export default function Home() {
 
 		// Return loading message if API request loading.
 		if (data.length === 0) return <p>Please wait, loading country data...</p>;
-		return <p>Yay</p>;
+		return <CountryApp />;
 	}, [data, error]);
 
 	return <>{Display}</>;

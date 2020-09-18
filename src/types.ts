@@ -1,6 +1,15 @@
 import rootReducer from './redux/reducers';
 
+//State Management
+
 export type RootState = ReturnType<typeof rootReducer>;
+
+//Themes
+export type ColorTheme = {
+	primaryColor: string;
+	darkenedPrimary: string;
+	secondaryColor: string;
+};
 
 export type CountryData = {
 	name: string;
