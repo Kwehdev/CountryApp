@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { themeMap } from '../../themes';
 import ThemeButton from '../ThemeButton';
 

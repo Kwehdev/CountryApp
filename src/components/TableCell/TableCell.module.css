@@ -1,0 +1,29 @@
+.Cell_flag {
+	width: 5%;
+}
+
+.Cell_name {
+	width: 10%;
+}
+
+.Cell_population {
+	width: 5%;
+}
+
+.Cell_languages {
+	width: 15%;
+}
+
+.Cell_region {
+	width: 5%;
+}
+
+.Wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 10vh;
+	margin: 15px;
+	width: 100%;
+	overflow: hidden;
+}

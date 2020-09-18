@@ -1,0 +1,9 @@
+.Container {
+	padding: 5%;
+}
+
+.Table {
+	border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+}
