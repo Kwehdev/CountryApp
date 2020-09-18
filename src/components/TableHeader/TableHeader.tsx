@@ -19,6 +19,7 @@ export default function TableHeader() {
 				<TableCell type={`region`}>
 					Region <TableSortToggle type={'region'} />
 				</TableCell>
+				<TableCell type={'card'}>Card</TableCell>
 			</tr>
 		</thead>
 	);

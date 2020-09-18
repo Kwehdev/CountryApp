@@ -1,20 +1,28 @@
-.Cell_flag {
-	width: 5%;
+.Cell {
+	text-align: center;
 }
 
-.Cell_name {
+.Cell_flag {
 	width: 10%;
 }
 
-.Cell_population {
-	width: 5%;
+.Cell_name {
+	width: 30%;
 }
 
-.Cell_languages {
+.Cell_population {
 	width: 15%;
 }
 
+.Cell_languages {
+	width: 20%;
+}
+
 .Cell_region {
+	width: 20%;
+}
+
+.Cell_card {
 	width: 5%;
 }
 
@@ -23,7 +31,8 @@
 	justify-content: center;
 	align-items: center;
 	height: 10vh;
-	margin: 15px;
+	padding: 15px;
+	margin: 10px 0;
 	width: 100%;
 	overflow: hidden;
 }

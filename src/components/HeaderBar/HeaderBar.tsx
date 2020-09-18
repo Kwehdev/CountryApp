@@ -1,14 +1,16 @@
 import React from 'react';
+import { FiHeart } from 'react-icons/fi';
 import useTypedSelector from '../../hooks/useTypedSelector';
 import SearchBar from '../SearchBar';
 import ThemeSelect from '../ThemeSelect';
 
-import styles from './Header.module.css';
+import styles from './HeaderBar.module.css';
 
 export default function HeaderBar() {
 	const { darkenedPrimary, secondaryColor } = useTypedSelector(
 		(state) => state.theme
 	);
+	const favourites = useTypedSelector((state) => state.favourites);
 	return (
 		<div
 			className={styles.Container}
@@ -25,6 +27,10 @@ export default function HeaderBar() {
 			</p>
 			<SearchBar />
 			<ThemeSelect />
+			<div className={styles.HeartContainer}>
+				<FiHeart className={styles.Heart} />
+				<p className={styles.FavouriteCount}>{favourites.length}</p>
+			</div>
 		</div>
 	);
 }

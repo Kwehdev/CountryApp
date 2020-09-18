@@ -16,12 +16,13 @@ const mapTypeToStyle: MapTypeToStyle = {
 	population: styles.Cell_population,
 	languages: styles.Cell_languages,
 	region: styles.Cell_region,
+	card: styles.Cell_card,
 };
 
 export default function TableCell({ children, type }: TableCellProps) {
 	const StyleType = mapTypeToStyle[type];
 	return (
-		<td className={StyleType}>
+		<td className={`${styles.Cell} ${StyleType}`}>
 			<div className={styles.Wrapper}>{children}</div>
 		</td>
 	);
