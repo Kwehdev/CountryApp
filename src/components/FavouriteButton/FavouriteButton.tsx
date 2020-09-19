@@ -21,8 +21,6 @@ export default function FavouriteButton({ name }: FavouriteButtonProps) {
 		[favourites, name]
 	);
 
-	console.log(isActive);
-
 	const handleClick = () => {
 		dispatch(addFavourite({ name }));
 	};

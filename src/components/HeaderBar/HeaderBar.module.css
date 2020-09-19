@@ -26,3 +26,12 @@
 .FavouriteCount {
 	margin-left: 0.3vw;
 }
+
+.Link {
+	text-decoration: none;
+	color: inherit;
+}
+
+.Link:hover {
+	opacity: 0.5;
+}

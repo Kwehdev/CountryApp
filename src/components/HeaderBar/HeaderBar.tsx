@@ -1,5 +1,6 @@
 import React from 'react';
 import { FiHeart } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 import useTypedSelector from '../../hooks/useTypedSelector';
 import SearchBar from '../SearchBar';
 import ThemeSelect from '../ThemeSelect';
@@ -27,10 +28,12 @@ export default function HeaderBar() {
 			</p>
 			<SearchBar />
 			<ThemeSelect />
-			<div className={styles.HeartContainer}>
-				<FiHeart className={styles.Heart} />
-				<p className={styles.FavouriteCount}>{favourites.length}</p>
-			</div>
+			<Link className={styles.Link} to='/favourites/'>
+				<div className={styles.HeartContainer}>
+					<FiHeart className={styles.Heart} />
+					<p className={styles.FavouriteCount}>{favourites.length}</p>
+				</div>
+			</Link>
 		</div>
 	);
 }

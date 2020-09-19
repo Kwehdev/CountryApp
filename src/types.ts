@@ -7,6 +7,7 @@ export type RootState = ReturnType<typeof rootReducer>;
 //Themes
 export type ColorTheme = {
 	primaryColor: string;
+	lightenedPrimary: string;
 	darkenedPrimary: string;
 	secondaryColor: string;
 };

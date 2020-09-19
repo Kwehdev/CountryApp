@@ -45,7 +45,7 @@ export default function TableRow({
 			<TableCell type={`region`}>{region}</TableCell>
 
 			<TableCell type={`card`}>
-				<Link className={styles.Link} to={`/countries/${name}`}>
+				<Link className={styles.Link} to={`/countries/${name.toLowerCase()}`}>
 					<FaExternalLinkAlt />
 				</Link>
 			</TableCell>
