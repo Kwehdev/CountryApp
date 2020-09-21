@@ -1,8 +1,14 @@
-import React from "react";
-import useTypedSelector from "./hooks/useTypedSelector";
-import Routes from "./Routes";
+import React from 'react';
+import useTypedSelector from './hooks/useTypedSelector';
+import Routes from './Routes';
 export default function App() {
   const { data, error } = useTypedSelector((state) => state.countries);
+
+  useEffect(() => {
+    if (data.length === 0) {
+      dispatch(getAllCountries());
+    }
+  }, [data, dispatch]);
 
   if (error) {
     return <p>Failed To load country data. Reason: {error.message}</p>;
