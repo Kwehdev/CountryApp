@@ -1,33 +1,33 @@
-import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { getAllCountries } from '../redux/actions/country';
-import { CountryData } from '../types';
-import useTypedSelector from './useTypedSelector';
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { getAllCountries } from "../redux/actions/country";
+import { CountryData } from "../types";
+import useTypedSelector from "./useTypedSelector";
 
 export default function useCountry(
-	countryName: string
+  countryName: string
 ): [Error | undefined, CountryData | undefined] {
-	const dispatch = useDispatch();
-	const { data, error } = useTypedSelector((state) => state.countries);
-	const [err, setErr] = useState<Error | undefined>();
-	const [countryData, setCountryData] = useState<undefined | CountryData>();
+  const dispatch = useDispatch();
+  const { data, error } = useTypedSelector((state) => state.countries);
+  const [err, setErr] = useState<Error | undefined>();
+  const [countryData, setCountryData] = useState<undefined | CountryData>();
 
-	useEffect(() => {
-		if (countryData) return;
+  useEffect(() => {
+    if (countryData) return;
 
-		if (data.length === 0) {
-			dispatch(getAllCountries());
-		}
+    if (data.length === 0) {
+      dispatch(getAllCountries());
+    }
 
-		if (error) setErr(error);
+    if (error) setErr(error);
 
-		const country = data.find(
-			({ name }) => name.toLowerCase() === countryName.toLowerCase()
-		);
+    const country = data.find(
+      ({ name }) => name.toLowerCase() === countryName.toLowerCase()
+    );
 
-		if (!country) setErr(new Error('Country not found'));
-		setCountryData(country);
-	}, [dispatch, countryData, countryName, error, data]);
+    if (!country) setErr(new Error("Country not found"));
+    setCountryData(country);
+  }, [dispatch, countryData, countryName, error, data]);
 
-	return [err, countryData];
+  return [err, countryData];
 }
